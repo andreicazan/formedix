@@ -1,27 +1,20 @@
-# Formedix
+Run `npm install` to install the packages and dependencies
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+In the `environment.ts` file I've set my key for using the Flicker Api
 
-## Development server
+You can obtain your own key and use it by doing the following steps:
+Go to `https://www.flickr.com/services/api/`
+Create an account -> Create an app -> Request an API Key
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To Run the application use the command:
+`ng serve`
 
-## Code scaffolding
+Third Party libraries used:
+`bootstrap`
+-- for designing the template
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`ngx-infinite-scroll`
+-- is used for implementing the infinite scroll 
+-- it allows setting the distance and throttle to numeric values
+-- in the scrolled event it allows to concat the images with new results received 
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
