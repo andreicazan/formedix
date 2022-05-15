@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { FlickrService } from "../api/flickr.service";
 
 @Component({
   selector: 'app-search-photos',
@@ -6,15 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-photos.component.css']
 })
 export class SearchPhotosComponent {
-
+  images: any[] = [];
   keyword: string = '';
 
-  constructor() { }
+  constructor(private flickrService: FlickrService) { }
 
   instantSearch(event: any): void {
-    this.keyword = event.target.value.toLowerCase();
-    if (this.keyword && this.keyword.length > 0) {
+    if(event) {
+      this.keyword = event.target.value.toLowerCase();
+      if (this.keyword && this.keyword.length > 0) {
+        this.flickrService.searchByKeyword(this.keyword)
+          .subscribe((res: any[]) => {
+            this.images = res;
+          });
+      }
     }
   }
-
 }
