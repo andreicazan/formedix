@@ -18,3 +18,23 @@ Third Party libraries used:
 -- it allows setting the distance and throttle to numeric values
 -- in the scrolled event it allows to concat the images with new results received 
 
+Project structure:
+
+in the directory api are stored the DTOs and the service:
+There are two DTOs for structuring the photos as it presents in the documentation
+`https://www.flickr.com/services/api/flickr.photos.search.html`
+
+The service contains the method `searchByKeyword` that will be executed each time the key is pressed
+It uses a http call for getting the data as the DTO structure
+
+SearchPhotosComponent
+-- contains the search of the photos by words 
+-- displays the results 
+-- uses the infinite scroll
+
+AppModule
+The imported modules are:
+HttpClientModule
+-- used in the http call to get the photos data
+InfiniteScrollModule
+-- used for implementing the infinite scroll for the displayed results
