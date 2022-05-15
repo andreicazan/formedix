@@ -23,4 +23,13 @@ export class SearchPhotosComponent {
       }
     }
   }
+
+  onInfiniteScroll(): void {
+    if (this.keyword && this.keyword.length > 0) {
+      this.flickrService.searchByKeyword(this.keyword)
+        .subscribe((res: any[]) => {
+          this.images = this.images.concat(res);
+        });
+    }
+  }
 }
